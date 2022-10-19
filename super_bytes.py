@@ -65,7 +65,12 @@ if call_module is False:
                             print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
                             print('    [HUMAN SIZE] ' + str_human_super_power)
                             print('    [BYTES] ' + str(int_super_power))
-                            print('    [MULTIPLIER] (' + str(value) + ' x ' + convert_bytes(int_super_power) + ') = ' + str(convert_bytes(int_multiplied_super_power)) + ' = ' + str(int_multiplied_super_power) + ' Bytes')
+                            if int(value) == int(n_):
+                                print('    [MULTIPLIER] (' + str(value) + '*^2) = (' + convert_bytes(
+                                    int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                            else:
+                                print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(
+                                    int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
                             print('')
 
     elif '-b' in sys.argv:
@@ -79,8 +84,12 @@ if call_module is False:
         print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
         print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
         print('    [BYTES] ' + str(int_super_power))
-        print('    [MULTIPLIER] (' + str(n_) + ' x ' + convert_bytes(int_super_power) + ') = ' + str(
-            convert_bytes(int_multiplied_super_power)) + ' = ' + str(int_multiplied_super_power) + ' Bytes')
+        if int(1) == int(n_):
+            print('    [MULTIPLIER] (' + str(1) + '*^2) = (' + convert_bytes(
+                int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+        else:
+            print('    [MULTIPLIER] (' + str(1) + '*' + str(n_) + ') = (' + convert_bytes(
+                int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
         print('')
 
     else:
@@ -127,7 +136,10 @@ if call_module is False:
             print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
             print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
             print('    [BYTES] ' + str(int_super_power))
-            print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+            if int(value) == int(n_):
+                print('    [MULTIPLIER] (' + str(value) + '*^2) = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+            else:
+                print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
             print('')
 
     print('')
