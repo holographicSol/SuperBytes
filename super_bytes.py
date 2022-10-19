@@ -1,5 +1,9 @@
 import sys
+import colorama
+from colorama import Style, Fore
 call_module = False
+
+colorama.init()
 
 
 def convert_bytes(num):
@@ -62,11 +66,11 @@ if call_module is False:
                             int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[1])
                             str_human_super_power = str(convert_bytes(int(int_super_power)))
 
-                            print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
+                            print('    [POWER] n_power = ' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ' = ' + str_super_power)
                             print('    [HUMAN SIZE] ' + str_human_super_power)
                             print('    [BYTES] ' + str(int_super_power))
                             if int(value) == int(n_):
-                                print('    [MULTIPLIER] (' + str(value) + '*^2) = (' + convert_bytes(
+                                print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '^' + Style.RESET_ALL + '2) = (' + convert_bytes(
                                     int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
                             else:
                                 print('    [MULTIPLIER] (' + str(value) + '*' + str(int_super_power) + ') = (' + convert_bytes(
@@ -81,11 +85,11 @@ if call_module is False:
         int_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=1)[0])
         int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=1)[1])
         str_human_super_power = str(convert_bytes(int(int_super_power)))
-        print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
+        print('    [POWER] n_power = ' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+ str(positive_exponent) + ' = ' + str_super_power)
         print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
         print('    [BYTES] ' + str(int_super_power))
         if int(1) == int(n_):
-            print('    [MULTIPLIER] (' + str(1) + '*^2) = (' + convert_bytes(
+            print('    [MULTIPLIER] (' + str(1) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' + convert_bytes(
                 int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
         else:
             print('    [MULTIPLIER] (' + str(1) + '*' + str(n_) + ') = (' + convert_bytes(
@@ -133,11 +137,11 @@ if call_module is False:
             int_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[0])
             int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[1])
             str_human_super_power = str(convert_bytes(int(int_super_power)))
-            print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
+            print('    [POWER] n_power = ' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ' = ' + str_super_power)
             print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
             print('    [BYTES] ' + str(int_super_power))
             if int(value) == int(n_):
-                print('    [MULTIPLIER] (' + str(value) + '*^2) = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
             else:
                 print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
             print('')
