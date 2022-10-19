@@ -70,10 +70,10 @@ if call_module is False:
                             print('    [BYTES] ' + str(int_super_power))
                             if int(value) == int(n_):
                                 print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '^' + Style.RESET_ALL + '2) = (' + convert_bytes(
-                                    int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                                    int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
                             else:
                                 print('    [MULTIPLIER] (' + str(value) + '*' + str(int_super_power) + ') = (' + convert_bytes(
-                                    int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                                    int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
                             print('')
 
     elif '-b' in sys.argv:
@@ -88,10 +88,10 @@ if call_module is False:
         print('    [BYTES] ' + str(int_super_power))
         if int(1) == int(n_):
             print('    [MULTIPLIER] (' + str(1) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' + convert_bytes(
-                int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
         else:
             print('    [MULTIPLIER] (' + str(1) + '*' + str(n_) + ') = (' + convert_bytes(
-                int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
         print('')
 
     else:
@@ -138,9 +138,9 @@ if call_module is False:
             print('    [POWER] n_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ')  = ' + str_super_power + ' = (' + str_human_super_power + ')')
             print('    [BYTES] ' + str(int_super_power))
             if int(value) == int(n_):
-                print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ') Bytes')
             else:
-                print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
+                print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
             print('')
 
     print('')
