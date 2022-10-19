@@ -12,6 +12,8 @@ def convert_bytes(num):
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB']:
         if num < 1024.0:
             return str(num)+' '+x
+        elif num >= int(1125899906842624*1125899906842624):
+            return str(num) + ' ' + x[-1]
         num /= 1024.0
 
 
@@ -68,10 +70,10 @@ if call_module is False:
 
                             print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
                             if int(value) == int(n_):
-                                print('    [MULTIPLIER] (' + str('super_power') + Style.BRIGHT+Fore.CYAN + '^' + Style.RESET_ALL + '2) = (' + convert_bytes(
+                                print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '^' + Style.RESET_ALL + '2) = (' + convert_bytes(
                                     int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
                             else:
-                                print('    [MULTIPLIER] (' + str('super_power') + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(int_super_power) + ') = (' + convert_bytes(
+                                print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(int_super_power) + ') = (' + convert_bytes(
                                     int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
                             print('')
 
@@ -85,10 +87,10 @@ if call_module is False:
         str_human_super_power = str(convert_bytes(int(int_super_power)))
         print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+ str(positive_exponent) + ' = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
         if int(1) == int(n_):
-            print('    [MULTIPLIER] (' + str('super_power') +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' + convert_bytes(
+            print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' + convert_bytes(
                 int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
         else:
-            print('    [MULTIPLIER] (' + str('super_power') + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + convert_bytes(
+            print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + convert_bytes(
                 int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
         print('')
 
@@ -135,9 +137,9 @@ if call_module is False:
             str_human_super_power = str(convert_bytes(int(int_super_power)))
             print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ')  = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
             if int(value) == int(n_):
-                print('    [MULTIPLIER] (' + str('super_power') +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ') Bytes')
+                print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  str(convert_bytes(int_multiplied_super_power)) + ') = (' + str(int_multiplied_super_power) + ') Bytes')
             else:
-                print('    [MULTIPLIER] (' + str('super_power') + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
+                print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + str(convert_bytes(int_multiplied_super_power)) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
             print('')
 
     print('')
