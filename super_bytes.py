@@ -27,7 +27,7 @@ def module_function(n=float, positive_exponent=float, value=int):
     global call_module
     call_module = True
 
-    return super_powers(n=float(n), positive_exponent=float(positive_exponent), value=value)
+    return super_powers(n=float(n), positive_exponent=float(positive_exponent), value=0)
 
 
 if call_module is False:
@@ -127,8 +127,7 @@ if call_module is False:
             print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
             print('    [HUMAN SIZE] ' + str_human_super_power)
             print('    [BYTES] ' + str(int_super_power))
-            print('    [MULTIPLIER] (' + str(n_) + ' x ' + convert_bytes(int_super_power) + ') = ' + str(
-                convert_bytes(int_multiplied_super_power)) + ' = ' + str(int_multiplied_super_power) + ' Bytes')
+            print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
             print('')
 
     print('')
