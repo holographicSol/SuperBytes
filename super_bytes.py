@@ -69,7 +69,7 @@ if call_module is False:
                                 print('    [MULTIPLIER] (' + str(value) + '*^2) = (' + convert_bytes(
                                     int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
                             else:
-                                print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(
+                                print('    [MULTIPLIER] (' + str(value) + '*' + str(int_super_power) + ') = (' + convert_bytes(
                                     int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
                             print('')
 
