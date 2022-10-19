@@ -77,7 +77,7 @@ if call_module is False:
         int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=1)[1])
         str_human_super_power = str(convert_bytes(int(int_super_power)))
         print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
-        print('    [HUMAN SIZE] ' + str_human_super_power)
+        print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
         print('    [BYTES] ' + str(int_super_power))
         print('    [MULTIPLIER] (' + str(n_) + ' x ' + convert_bytes(int_super_power) + ') = ' + str(
             convert_bytes(int_multiplied_super_power)) + ' = ' + str(int_multiplied_super_power) + ' Bytes')
@@ -125,7 +125,7 @@ if call_module is False:
             int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[1])
             str_human_super_power = str(convert_bytes(int(int_super_power)))
             print('    [POWER] n_power = ' + str(n_) + '^' + str(positive_exponent) + ' = ' + str_super_power)
-            print('    [HUMAN SIZE] ' + str_human_super_power)
+            print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
             print('    [BYTES] ' + str(int_super_power))
             print('    [MULTIPLIER] (' + str(value) + '*' + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = ' + str(int_multiplied_super_power) + ' Bytes')
             print('')
