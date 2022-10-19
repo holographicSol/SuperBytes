@@ -66,7 +66,7 @@ if call_module is False:
                             int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[1])
                             str_human_super_power = str(convert_bytes(int(int_super_power)))
 
-                            print('    [POWER] n_power = ' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ' = ' + str_super_power)
+                            print('    [POWER] n_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ') = ' + str_super_power)
                             print('    [HUMAN SIZE] ' + str_human_super_power)
                             print('    [BYTES] ' + str(int_super_power))
                             if int(value) == int(n_):
@@ -85,7 +85,7 @@ if call_module is False:
         int_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=1)[0])
         int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=1)[1])
         str_human_super_power = str(convert_bytes(int(int_super_power)))
-        print('    [POWER] n_power = ' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+ str(positive_exponent) + ' = ' + str_super_power)
+        print('    [POWER] n_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+ str(positive_exponent) + ') = ' + str_super_power)
         print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
         print('    [BYTES] ' + str(int_super_power))
         if int(1) == int(n_):
@@ -137,7 +137,7 @@ if call_module is False:
             int_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[0])
             int_multiplied_super_power = float(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[1])
             str_human_super_power = str(convert_bytes(int(int_super_power)))
-            print('    [POWER] n_power = ' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ' = ' + str_super_power)
+            print('    [POWER] n_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ') = ' + str_super_power)
             print('    [HUMAN SIZE] ' + convert_bytes(int_multiplied_super_power))
             print('    [BYTES] ' + str(int_super_power))
             if int(value) == int(n_):
