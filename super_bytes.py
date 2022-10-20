@@ -9,11 +9,13 @@ colorama.init()
 def convert_bytes(num):
     """ bytes for humans """
 
-    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']:
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTE']:
         if num < 1024.0:
             return str(num)+' '+x
-        elif num >= int(1024*1208925819614629174706176):
-            return str(num) + ') = (>=YB' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024'
+        elif num == int(1024*1267650600228229401496703205376):
+            return str(num) + ') = (GEOPBYTE' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024'
+        elif num > int(1024*1267650600228229401496703205376):
+            return str(num) + ') = (>(GEOPBYTE' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024' + Style.BRIGHT + Fore.CYAN + '+' + Style.RESET_ALL
         num /= 1024.0
 
 
@@ -51,6 +53,8 @@ if call_module is False:
         print('        [EB]               super_bytes -e 1')
         print('        [ZB]               super_bytes -z 1')
         print('        [YB]               super_bytes -y 1')
+        print('        [BB]               super_bytes -bb 1')
+        print('        [GEOPBYTE]         super_bytes -geopbyte 1')
         print('        [ANY]              super_bytes --super-power 1 --positive-exponent 1 --value 1')
         print('        [CONVERT BYTES]    super_bytes --human-size 1024')
         print('        [HELP]             -h')
@@ -165,6 +169,18 @@ if call_module is False:
             idx = sys.argv.index('-y')
             positive_exponent = 1.0
             n_ = 1208925819614629174706176
+            allow_bool = True
+
+        elif '-bb' in sys.argv:
+            idx = sys.argv.index('-bb')
+            positive_exponent = 1.0
+            n_ = 1237940039285380274899124224
+            allow_bool = True
+
+        elif '-geopbyte' in sys.argv:
+            idx = sys.argv.index('-geopbyte')
+            positive_exponent = 1.0
+            n_ = 1267650600228229401496703205376
             allow_bool = True
 
         if allow_bool is True:
