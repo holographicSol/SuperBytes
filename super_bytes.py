@@ -48,6 +48,9 @@ if call_module is False:
         print('    [GB]               super_bytes -g 1')
         print('    [TB]               super_bytes -t 1')
         print('    [PB]               super_bytes -p 1')
+        print('    [EB]               super_bytes -e 1')
+        print('    [ZB]               super_bytes -z 1')
+        print('    [YB]               super_bytes -y 1')
         print('    [ANY]              super-power 1 --positive-exponent 1 --value 1')
         print('    [CONVERT BYTES]    super_bytes --human-size 1024')
         print('    [HELP]             -h')
@@ -142,6 +145,24 @@ if call_module is False:
             idx = sys.argv.index('-p')
             positive_exponent = 1.0
             n_ = 1125899906842624
+            allow_bool = True
+
+        elif '-e' in sys.argv:
+            idx = sys.argv.index('-e')
+            positive_exponent = 1.0
+            n_ = 1152921504606846976
+            allow_bool = True
+
+        elif '-z' in sys.argv:
+            idx = sys.argv.index('-z')
+            positive_exponent = 1.0
+            n_ = 1180591620717411303424
+            allow_bool = True
+
+        elif '-y' in sys.argv:
+            idx = sys.argv.index('-y')
+            positive_exponent = 1.0
+            n_ = 1208925819614629174706176
             allow_bool = True
 
         if allow_bool is True:
