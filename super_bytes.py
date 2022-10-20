@@ -9,7 +9,7 @@ colorama.init()
 def convert_bytes(num):
     """ bytes for humans """
 
-    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB']:
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']:
         if num < 1024.0:
             return str(num)+' '+x
         elif num >= int(1125899906842624*1125899906842624):
