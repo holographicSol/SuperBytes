@@ -53,7 +53,7 @@ if call_module is False:
         print('        [EXABYTE]       [EB]               super_bytes -e 1')
         print('        [ZETTABYTE]     [ZB]               super_bytes -z 1')
         print('        [YOTTABYTE]     [YB]               super_bytes -y 1')
-        print('        [BRONTABYTE]    [BB]               super_bytes -bb 1')
+        print('        [BRONTOBYTE]    [BB]               super_bytes -bb 1')
         print('        [GEOPBYTE]      [GBP]              super_bytes -geopbyte 1')
         print('')
         print('        [ANY]           super_bytes --super-power 1 --positive-exponent 1 --value 1')
