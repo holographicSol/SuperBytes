@@ -15,7 +15,7 @@ def convert_bytes(num):
         elif num == int(1024*1267650600228229401496703205376):
             return str(num) + ') = (GEOPBYTE' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024'
         elif num > int(1024*1267650600228229401496703205376):
-            return str(num) + ') = (>(GEOPBYTE' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024' + Style.BRIGHT + Fore.CYAN + '+' + Style.RESET_ALL
+            return str(num) + ') = (GEOPBYTE' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024' + Style.BRIGHT + Fore.CYAN + '+!' + Style.RESET_ALL
         num /= 1024.0
 
 
