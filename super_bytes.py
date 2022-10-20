@@ -12,8 +12,8 @@ def convert_bytes(num):
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']:
         if num < 1024.0:
             return str(num)+' '+x
-        elif num >= int(1125899906842624*1125899906842624):
-            return str(num) + ' ' + x[-1]
+        elif num >= int(1024*1208925819614629174706176):
+            return str(num) + ') = (>=YB' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024'
         num /= 1024.0
 
 
@@ -51,7 +51,7 @@ if call_module is False:
         print('        [EB]               super_bytes -e 1')
         print('        [ZB]               super_bytes -z 1')
         print('        [YB]               super_bytes -y 1')
-        print('        [ANY]              super-power 1 --positive-exponent 1 --value 1')
+        print('        [ANY]              super_bytes --super-power 1 --positive-exponent 1 --value 1')
         print('        [CONVERT BYTES]    super_bytes --human-size 1024')
         print('        [HELP]             -h')
         print('')
