@@ -83,7 +83,7 @@ if call_module is False:
                             int_multiplied_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[1])
                             str_human_super_power = str(convert_bytes(int(int_super_power)))
 
-                            print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
+                            print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(int(positive_exponent)) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
                             if int(value) == int(n_):
                                 print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '^' + Style.RESET_ALL + '2) = (' + convert_bytes(
                                     int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
@@ -102,7 +102,7 @@ if call_module is False:
         int_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=1)[0])
         int_multiplied_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=1)[1])
         str_human_super_power = str(convert_bytes(int(int_super_power)))
-        print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+ str(positive_exponent) + ' = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
+        print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+ str(int(positive_exponent)) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
         if int(1) == int(n_):
             print('    [MULTIPLIER] (' + str('1') +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' + convert_bytes(
                 int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
@@ -153,7 +153,7 @@ if call_module is False:
             int_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[0])
             int_multiplied_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[1])
             str_human_super_power = str(convert_bytes(int(int_super_power)))
-            print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
+            print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(int(positive_exponent)) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
             if int(value) == int(n_):
                 print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  str(convert_bytes(int_multiplied_super_power)) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
             else:
