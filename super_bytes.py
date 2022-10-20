@@ -37,18 +37,33 @@ def module_function(n=float, positive_exponent=float, value=int):
 
 
 if call_module is False:
-    print('')
-    print('[SUPER BYTES]')
-
     allow_bool = False
 
-    if '--human-size' in sys.argv:
+    if '-h' in sys.argv:
+        print('')
+        print('[SUPER BYTES]')
+        print('    [BYTES]            super_bytes -b 1')
+        print('    [KB]               super_bytes -k 1')
+        print('    [MB]               super_bytes -m 1')
+        print('    [GB]               super_bytes -g 1')
+        print('    [TB]               super_bytes -t 1')
+        print('    [PB]               super_bytes -p 1')
+        print('    [ANY]              super-power 1 --positive-exponent 1 --value 1')
+        print('    [CONVERT BYTES]    super_bytes --human-size 1024')
+        print('    [HELP]             -h')
+        print('')
+        print('    Written by Benjamin Jack Cullen.')
+
+    elif '--human-size' in sys.argv:
         idx = sys.argv.index('--human-size')
         if sys.argv[idx + 1].isdigit():
             num = sys.argv[idx + 1]
             print('    [HUMAN SIZE] ' + str(convert_bytes(int(num))))
 
     elif '--super-power' in sys.argv:
+        print('')
+        print('[SUPER BYTES]')
+
         idx = sys.argv.index('--super-power')
         if sys.argv[idx + 1]:
             n_ = sys.argv[idx + 1]
@@ -75,9 +90,11 @@ if call_module is False:
                             else:
                                 print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(int_super_power) + ') = (' + convert_bytes(
                                     int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
-                            print('')
 
     elif '-b' in sys.argv:
+        print('')
+        print('[SUPER BYTES]')
+
         positive_exponent = 1.0
         idx = sys.argv.index('-b')
         n_ = int(sys.argv[idx + 1])
@@ -92,7 +109,6 @@ if call_module is False:
         else:
             print('    [MULTIPLIER] (' + str('1') + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + convert_bytes(
                 int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
-        print('')
 
     else:
         positive_exponent = 0
@@ -129,6 +145,8 @@ if call_module is False:
             allow_bool = True
 
         if allow_bool is True:
+            print('')
+            print('[SUPER BYTES]')
 
             value = int(sys.argv[idx + 1])
             str_super_power = str(super_powers(n=float(n_), positive_exponent=float(positive_exponent), value=value)[0])
@@ -137,10 +155,9 @@ if call_module is False:
             str_human_super_power = str(convert_bytes(int(int_super_power)))
             print('    [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(positive_exponent) + ')  = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
             if int(value) == int(n_):
-                print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  str(convert_bytes(int_multiplied_super_power)) + ') = (' + str(int_multiplied_super_power) + ') Bytes')
+                print('    [MULTIPLIER] (' + str(value) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL+'2) = (' +  str(convert_bytes(int_multiplied_super_power)) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
             else:
                 print('    [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + str(convert_bytes(int_multiplied_super_power)) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
-            print('')
 
     print('')
 
