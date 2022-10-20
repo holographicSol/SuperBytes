@@ -59,11 +59,11 @@ if call_module is False:
 
     elif '--human-size' in sys.argv:
         print('')
-        print('    [SUPER BYTES]\n')
+        print('    [SUPER BYTES]')
         idx = sys.argv.index('--human-size')
         if sys.argv[idx + 1].isdigit():
             num = sys.argv[idx + 1]
-            print('    [HUMAN SIZE] ' + str(convert_bytes(int(num))))
+            print('        [HUMAN SIZE] ' + str(convert_bytes(int(num))))
 
     elif '--super-power' in sys.argv:
         print('')
