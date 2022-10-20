@@ -42,6 +42,7 @@ if call_module is False:
     if '-h' in sys.argv:
         print('')
         print('[SUPER BYTES]')
+        print('')
         print('    [BYTES]            super_bytes -b 1')
         print('    [KB]               super_bytes -k 1')
         print('    [MB]               super_bytes -m 1')
@@ -58,6 +59,8 @@ if call_module is False:
         print('    Written by Benjamin Jack Cullen.')
 
     elif '--human-size' in sys.argv:
+        print('')
+        print('[SUPER BYTES]')
         idx = sys.argv.index('--human-size')
         if sys.argv[idx + 1].isdigit():
             num = sys.argv[idx + 1]
