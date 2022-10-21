@@ -1,7 +1,4 @@
-SuperBytes
-
-Converts bytes.
-
+[SuperPowerBytes]
 
     [SUPER POWER BYTES]
 
@@ -22,3 +19,20 @@ Converts bytes.
         [HELP]                             -h
         [AUTHOR] Written by Benjamin Jack Cullen.
 
+
+[SuperRootBytes]
+
+    [SUPER ROOT BYTES]
+
+        [N ROOT]     super_root_bytes nth_root n
+        [HELP]       -h
+        [AUTHOR]     Written by Benjamin Jack Cullen
+
+
+[SuperSizeBytes]
+
+    [SUPER SIZE BYTES]
+
+        [CONVERT BYTES] super_size 1024
+        [HELP]                             -h
+        [AUTHOR] Written by Benjamin Jack Cullen.
