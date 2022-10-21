@@ -12,7 +12,7 @@
         [ZETTABYTE]     [ZB]               super_bytes -z 1
         [YOTTABYTE]     [YB]               super_bytes -y 1
         [BRONTOBYTE]    [BB]               super_bytes -bb 1
-        [GEOPBYTE]      [GBP]              super_bytes -geopbyte 1
+        [GEOPBYTE]      [GBP]              super_bytes -gpb 1
 
         [ANY]           super_bytes bytes power quantity
 
