@@ -2,21 +2,21 @@
 
     [SUPER POWER BYTES]
 
-        [BYTES]                            super_bytes -b 1
-        [KILOBYTE]      [KB]               super_bytes -k 1
-        [MEGABYTE]      [MB]               super_bytes -m 1
-        [GIGABYTE]      [GB]               super_bytes -g 1
-        [TERABYTE]      [TB]               super_bytes -t 1
-        [PETABYTE]      [PB]               super_bytes -p 1
-        [EXABYTE]       [EB]               super_bytes -e 1
-        [ZETTABYTE]     [ZB]               super_bytes -z 1
-        [YOTTABYTE]     [YB]               super_bytes -y 1
-        [BRONTOBYTE]    [BB]               super_bytes -bb 1
-        [GEOPBYTE]      [GBP]              super_bytes -gpb 1
+        [BYTES]                            super_bytes 1 1
+        [KILOBYTE]      [KB]               super_bytes 1024 1
+        [MEGABYTE]      [MB]               super_bytes 1024 2
+        [GIGABYTE]      [GB]               super_bytes 1024 3
+        [TERABYTE]      [TB]               super_bytes 1024 4
+        [PETABYTE]      [PB]               super_bytes 1024 5
+        [EXABYTE]       [EB]               super_bytes 1024 6
+        [ZETTABYTE]     [ZB]               super_bytes 1024 7
+        [YOTTABYTE]     [YB]               super_bytes 1024 8
+        [BRONTOBYTE]    [BB]               super_bytes 1024 9
+        [GEOPBYTE]      [GBP]              super_bytes 1024 10
 
-        [ANY]           super_bytes bytes power quantity
+        [ANY]                              super_bytes byte power quantity
+        [HELP]          -h
 
-        [HELP]                             -h
         [AUTHOR] Written by Benjamin Jack Cullen.
 
 
@@ -91,3 +91,9 @@
         command: super_root_bytes 11 1298074214633706907132624082305024
 
         output: 1024 Bytes
+
+
+[SUPER_POWER] [0 bytes]
+
+	Out of programmed human bytes group range.
+	Convert anyway.
