@@ -60,7 +60,7 @@
     [1 GEOBYTE]   super_power_bytes 1024 10
 
 
-[EXAMPLE] Scaling 2.
+[EXAMPLE] Scaling 2 - Scaling with Quantity.
 
     [120 BYTE] super_power_bytes 1 1 120
     [120 KB]   super_power_bytes 1024 1 120
