@@ -54,42 +54,12 @@ if call_module is False:
         print('        [BRONTOBYTE]    [BB]               super_bytes -bb 1')
         print('        [GEOPBYTE]      [GBP]              super_bytes -geopbyte 1')
         print('')
-        print('        [ANY]           super_bytes --super-power 1 --positive-exponent 1 --value 1')
-        print('        [CONVERT BYTES] super_bytes --human-size 1024')
+        print('        [ANY]           super_bytes bytes power quantity')
         print('')
         print('        [HELP]                             -h')
         print('        [AUTHOR] Written by Benjamin Jack Cullen.')
 
-    elif '--super-power' in sys.argv:
-        print('')
-        print('    [SUPER POWER BYTES]')
-
-        idx = sys.argv.index('--super-power')
-        if sys.argv[idx + 1]:
-            n_ = sys.argv[idx + 1]
-
-            if '--positive-exponent' in sys.argv:
-                idx = sys.argv.index('--positive-exponent')
-                if sys.argv[idx + 1]:
-                    positive_exponent = sys.argv[idx + 1]
-
-                    if '--value' in sys.argv:
-                        idx = sys.argv.index('--value')
-                        if sys.argv[idx + 1].isdigit():
-                            value = int(sys.argv[idx + 1])
-
-                            str_super_power = str(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[0])
-                            int_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[0])
-                            int_multiplied_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[1])
-                            str_human_super_power = str(convert_bytes(int(int_super_power)))
-
-                            print('        [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(int(positive_exponent)) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
-                            if int(value) == int(n_):
-                                print('        [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '^' + Style.RESET_ALL + '2) = (' + convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
-                            else:
-                                print('        [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(int_super_power) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
-
-    elif '-b' in sys.argv:
+    if '-b' in sys.argv:
         print('')
         print('    [SUPER POWER BYTES]')
 
@@ -106,7 +76,7 @@ if call_module is False:
         else:
             print('        [MULTIPLIER] (' + str('1') + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
 
-    else:
+    elif sys.argv[1] in ['-k', '-m', '-g', '-t', '-p', '-e', '-z', '-y', '-bb', '-gpb']:
         positive_exponent = 0
         n_ = 0
 
@@ -164,8 +134,8 @@ if call_module is False:
             n_ = 1237940039285380274899124224
             allow_bool = True
 
-        elif '-geopbyte' in sys.argv:
-            idx = sys.argv.index('-geopbyte')
+        elif '-gpb' in sys.argv:
+            idx = sys.argv.index('-gpb')
             positive_exponent = 1.0
             n_ = 1267650600228229401496703205376
             allow_bool = True
@@ -184,4 +154,32 @@ if call_module is False:
             else:
                 print('        [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(n_) + ') = (' + str(convert_bytes(int_multiplied_super_power)) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
 
-    print('')
+    elif len(sys.argv) == 4 or len(sys.argv) == 3:
+        print('')
+        print('    [SUPER POWER BYTES]')
+
+        n_ = 1
+        if sys.argv[1].isdigit():
+            n_ = int(sys.argv[1])
+
+        positive_exponent = 1
+        if sys.argv[2].isdigit():
+            positive_exponent = int(sys.argv[2])
+
+        value = 1
+        if len(sys.argv) == 4:
+            if sys.argv[3].isdigit():
+                value = int(sys.argv[3])
+
+        str_super_power = str(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[0])
+        int_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[0])
+        int_multiplied_super_power = int(super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)[1])
+        str_human_super_power = str(convert_bytes(int(int_super_power)))
+
+        print('        [POWER] super_power = (' + str(n_) +Style.BRIGHT+Fore.CYAN + '^'+Style.RESET_ALL + str(int(positive_exponent)) + ') = (' + str_super_power + ' Bytes) = (' + str_human_super_power + ')')
+        if int(value) == int(n_):
+            print('        [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '^' + Style.RESET_ALL + '2) = (' + convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
+        else:
+            print('        [MULTIPLIER] (' + str(value) + Style.BRIGHT+Fore.CYAN + '*' + Style.RESET_ALL + str(int_super_power) + ') = (' + convert_bytes(int_multiplied_super_power) + ') = (' + str(int_multiplied_super_power) + ' Bytes)')
+
+print('')
