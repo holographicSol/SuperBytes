@@ -5,24 +5,39 @@ call_module = False
 
 colorama.init()
 
+b_arg = ['-b', '-k', '-m', '-g', '-t', '-p', '-e', '-z', '-y', '-bb', '-gpb']
+
 
 def convert_bytes(num):
     """ bytes for humans """
 
+    num = 0
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTE']:
+        if num <= 1024.0:
+            return str(float(num))+' '+str(x)
+        num /= 1024.0
+
+
+def convert_bytes_human(num):
+    """ bytes for humans """
+
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTE']:
         if num < 1024.0:
-            return str(num)+' '+str(x)
+            return str(num)+' '+x
+        elif num >= int(1267650600228229401496703205376*1024):
+            return str('[MAX]')
+
         num /= 1024.0
 
 
 def super_powers(n=int, positive_exponent=int, value=0):
     """ loop power operation then multiply result to value=n """
     i = 1
-    super_power = int(n)
+    super_power = float(n)
     while i < positive_exponent:
-        super_power = int(int(super_power) * int(n))
+        super_power = float(float(super_power) * float(n))
         i += 1
-    return int(super_power), int(super_power*value)
+    return float(super_power), float(super_power*value)
 
 
 if '-h' in sys.argv:
@@ -45,55 +60,23 @@ if '-h' in sys.argv:
     print('')
     print('        [AUTHOR] Written by Benjamin Jack Cullen.')
 
-elif sys.argv[1] in ['-b', '-k', '-m', '-g', '-t', '-p', '-e', '-z', '-y', '-bb', '-gpb']:
+elif sys.argv[1] in b_arg:
+    """ ['-k', '-m', '-g', '-t', '-p', '-e', '-z', '-y', '-bb', '-gpb']: """
 
-    positive_exponent = 1.0
+    positive_exponent_ = [0.0,
+                          1.0, 2.0, 3.0, 4.0, 5.0,
+                          6.0, 7.0, 8.0, 9.0, 10]
+
+    positive_exponent = positive_exponent_[0]
+
     idx = 0
     n_ = 0
 
-    if '-b' in sys.argv:
-        idx = sys.argv.index('-b')
-        n = 0
-
-    elif '-k' in sys.argv:
-        idx = sys.argv.index('-k')
-        positive_exponent = 1.0
-
-    elif '-m' in sys.argv:
-        idx = sys.argv.index('-m')
-        positive_exponent = 2.0
-
-    elif '-g' in sys.argv:
-        idx = sys.argv.index('-g')
-        positive_exponent = 3.0
-
-    elif '-t' in sys.argv:
-        idx = sys.argv.index('-t')
-        positive_exponent = 4.0
-
-    elif '-p' in sys.argv:
-        idx = sys.argv.index('-p')
-        positive_exponent = 5.0
-
-    elif '-e' in sys.argv:
-        idx = sys.argv.index('-e')
-        positive_exponent = 6.0
-
-    elif '-z' in sys.argv:
-        idx = sys.argv.index('-z')
-        positive_exponent = 7.0
-
-    elif '-y' in sys.argv:
-        idx = sys.argv.index('-y')
-        positive_exponent = 8.0
-
-    elif '-bb' in sys.argv:
-        idx = sys.argv.index('-bb')
-        positive_exponent = 9.0
-
-    elif '-gpb' in sys.argv:
-        idx = sys.argv.index('-gpb')
-        positive_exponent = 10.0
+    for _ in b_arg:
+        if sys.argv[1] == _:
+            print('-- matching sys.argv:', _)
+            idx = sys.argv.index(_)
+    positive_exponent = positive_exponent_[idx]
 
     print('')
     print('    [SUPER POWER BYTES]')
@@ -104,42 +87,56 @@ elif sys.argv[1] in ['-b', '-k', '-m', '-g', '-t', '-p', '-e', '-z', '-y', '-bb'
     int_super_power = int(sp[0])
     str_human_super_power = str(convert_bytes(int(int_super_power)))
 
-    if sp[0] <= 1024 and '-b' in sys.argv:
-        print('        [BYTES] (' + str('1') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL + str(
-            positive_exponent) + ') * ' + str(value) + ') = (' + str(convert_bytes(int(value))) + ') = ' + str(
-            int(value)) + ' Bytes')
-    else:
-        print('        [BYTES] (' + str('1024') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL + str(
-            positive_exponent) + ') * ' + str(value) + ') = (' + str(convert_bytes(int(sp[1]))) + ') = ' + str(
-            int(sp[1])) + ' Bytes')
 
-
-elif sys.argv[1] not in ['-b', '-k', '-m', '-g', '-t', '-p', '-e', '-z', '-y', '-bb', '-gpb'] and len(sys.argv) >= 3:
-    print('[where:not_list]')
+elif len(sys.argv) >= 3:
+    """ Allow arbitrary bytes, powers, values. """
 
     print('')
     print('    [SUPER POWER BYTES]')
+
     n_ = 1
     if sys.argv[1].isdigit():
         n_ = int(sys.argv[1])
     positive_exponent = 1
+
     if sys.argv[2].isdigit():
         positive_exponent = int(sys.argv[2])
+
     value = 1
     if len(sys.argv) == 4:
         if sys.argv[3].isdigit():
             value = int(sys.argv[3])
+
     sp = super_powers(n=int(n_), positive_exponent=int(positive_exponent), value=value)
     str_super_power = str(sp[0])
     int_super_power = int(sp[0])
     str_human_super_power = str(convert_bytes(int(int_super_power)))
 
-    if sp[0] <= 1024:
-        print('        [BYTES] (' + str('1') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL + str(
-            positive_exponent) + ') * ' + str(value) + ') = (' + str(convert_bytes(int(value))) + ') = ' + str(
-            int(value)) + ' Bytes')
+    """ Allow if super_powered number seemingly n bytes """
+    if sp[0] < 1024:
+        str_head = '        [BYTES] (' + str('1') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL
+        str_ex = str(positive_exponent)
+        str_val = ') * ' + str(value) + ') = ('
+        str_tails = str(float(value)) + ' * Bytes )'
+
+        print(str_head,
+              str_ex,
+              str_val,
+              str_tails)
+
     else:
-        print('        [BYTES] (' + str('1024') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL + str(
-            positive_exponent) + ') * ' + str(value) + ') = (' + str(convert_bytes(int(sp[1]))) + ') = ' + str(
-            int(sp[1])) + ' Bytes')
+        """ Allow if super_powered number greater than bytes """
+        str_head = '        [BYTES] (' + str('1024') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL
+        str_ex = str(positive_exponent)
+        str_val = ') * ' + str(value) + ') = ('
+        str_tails = str(int(sp[1])) + ' * Bytes )'
+
+        int_tails = int(int(sp[1]))
+        str_human = '        [' + str(convert_bytes_human(int_tails)) + ']'
+        print(str_human)
+
+        print(str_head,
+              str_ex,
+              str_val,
+              str_tails)
 print('')
