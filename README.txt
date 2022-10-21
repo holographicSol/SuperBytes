@@ -43,7 +43,7 @@
     A bytes converter toolset to quantify bytes and scaled bytes.
 
 
-[EXAMPLE] Scaling 1.
+[RETURN BYTES] [EXAMPLE] [SUPER POWER]
 
     [1 BYTE] super_power_bytes -b 1
 
@@ -62,7 +62,7 @@
     [1 GEOBYTE] super_power_bytes 1024 10
 
 
-[EXAMPLE] Scaling 2 - Scaling with Quantity.
+[RETURN BYTES] [EXAMPLE]  [ SUPER POWER * QUANTITY ]
 
     [120 BYTE] super_power_bytes -b 120
 
