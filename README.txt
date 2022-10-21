@@ -57,7 +57,7 @@
     [1 ZB]   super_power_bytes 1024 7
     [1 YB]   super_power_bytes 1024 8
     [1 BB]   super_power_bytes 1024 9
-    [1 GEOBYTE]   super_power_bytes 1024 10
+    [1 GEOBYTE]  super_power_bytes 1024 10
 
 
 [EXAMPLE] Scaling 2 - Scaling with Quantity.
@@ -72,4 +72,4 @@
     [120 ZB]   super_power_bytes 1024 7 120
     [120 YB]   super_power_bytes 1024 8 120
     [120 BB]   super_power_bytes 1024 9 120
-    [120 GEOBYTE]   super_power_bytes 1024 10 120
+    [120 GEOBYTE]  super_power_bytes 1024 10 120
