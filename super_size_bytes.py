@@ -12,10 +12,8 @@ def convert_bytes(num):
         if num < 1024.0:
             return str(num)+' '+x
         elif num >= int(1024*1267650600228229401496703205376):
-            return str('[MAX] ') + str(num) + ' Bytes'
-        #     return str(num) + ') = (GEOPBYTE' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024'
-        # elif num > int(1024*1267650600228229401496703205376):
-        #     return str(num) + ') = (GEOPBYTE' + Style.BRIGHT + Fore.CYAN + '*' + Style.RESET_ALL + '1024' + Style.BRIGHT + Fore.CYAN + '+!' + Style.RESET_ALL
+            return str('[MAX]')
+
         num /= 1024.0
 
 
