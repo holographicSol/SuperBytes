@@ -45,11 +45,8 @@
 
 [RETURN BYTES] [EXAMPLE] [SUPER POWER]
 
-    [1 BYTE] super_bytes -b 1
-    [1 BYTE] super_bytes -b 1
-
     [1 BYTE] super_bytes 1 1
-    [1 BYTE] super_bytes 1 1
+    [1 BYTE] super_bytes 1 1 1
     [2 BYTE] super_bytes 2 1
     [2 BYTE] super_bytes 2 1
     [3 BYTE] super_bytes 3 1
@@ -77,9 +74,6 @@
 
 
 [RETURN BYTES] [EXAMPLE]  [ SUPER POWER * QUANTITY ]
-
-    [120 BYTE] super_bytes -b 120
-    [120 BYTE] super_bytes -b 120
 
     [120 BYTE] super_bytes 1 1 120
     [120 BYTE] super_bytes 1 1 120
