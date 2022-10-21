@@ -77,3 +77,17 @@
     [120 YB]   super_power_bytes 1024 8 120
     [120 BB]   super_power_bytes 1024 9 120
     [120 GEOBYTE] super_power_bytes 1024 10 120
+
+
+[SUPER POWER BYTES] [EXAMPLE] [ INVERSION ]
+       
+        Step 1. SUPER_POWER = ((Nbytes^X) * z)
+        command: super_power_bytes 1024 11
+
+        output: 1298074214633706907132624082305024 Bytes
+
+
+        Step 2. SUPER_ROOT = Invert step 1.
+        command: super_root_bytes 11 1298074214633706907132624082305024
+
+        output: 1024 Bytes
