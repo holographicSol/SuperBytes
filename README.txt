@@ -36,3 +36,8 @@
         [CONVERT BYTES] super_size 1024
         [HELP]                             -h
         [AUTHOR] Written by Benjamin Jack Cullen.
+
+
+[NOTES]
+	
+    A bytes converter toolset to quantify bytes and scaled bytes.
