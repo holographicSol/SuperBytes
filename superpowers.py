@@ -34,7 +34,7 @@ def super_powers(n=int, positive_exponent=int, quantity=0):
     return float(super_power), float(super_power*quantity)
 
 
-if '-h' in sys.argv:
+def func_help():
     print('')
     print('    [SUPER POWER BYTES]\n')
     print('        [BYTES]                            superpower 1 1 1')
@@ -56,6 +56,9 @@ if '-h' in sys.argv:
     print('')
     print('        [AUTHOR] Written by Benjamin Jack Cullen.')
 
+
+if '-h' in sys.argv:
+    func_help()
 
 elif len(sys.argv) == 4:
     """ Allow arbitrary bytes, powers, values. """
@@ -116,23 +119,29 @@ elif len(sys.argv) == 4:
               str_tails)
 
 elif len(sys.argv) == 2:
-    num = int(str(sys.argv[1]))
+    num = 1
+    if sys.argv[1].isdigit():
+        num = int(str(sys.argv[1]))
     print('')
     print('    [SUPER SIZE BYTES]')
     print('        [SIZE] [' + str(convert_bytes(num)) + ']')
 
 elif len(sys.argv) == 3:
-    x = int(str(sys.argv[1]))
+    x = 1
+    y = 1
+
+    if sys.argv[1].isdigit():
+        x = int(str(sys.argv[1]))
     if sys.argv[2].isdigit():
         y = int(str(sys.argv[2]))
-        super_root_bytes = float(super_root(num=x, n=float(y)))
-        int_super_root_bytes = super_root_bytes
-        print('')
-        print('    [SUPER ROOT BYTES]')
-        print('        [NTH ROOT] [' + str(convert_bytes(float(super_root_bytes))) + ']')
-        print('        [BYTES]  (' + (str(int(super_root_bytes)) + ' Bytes)'))
-        print('')
-    else:
-        print('invalid argument characters.')
+    super_root_bytes = float(super_root(num=x, n=float(y)))
+    int_super_root_bytes = super_root_bytes
+    print('')
+    print('    [SUPER ROOT BYTES]')
+    print('        [NTH ROOT] [' + str(convert_bytes(float(super_root_bytes))) + ']')
+    print('        [BYTES]  (' + (str(int(super_root_bytes)) + ' Bytes)'))
+    print('')
 
+else:
+    func_help()
 print('')
