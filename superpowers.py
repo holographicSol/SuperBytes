@@ -1,6 +1,9 @@
+import datetime
 import sys
 import colorama
 from colorama import Style, Fore
+import timeit
+import time
 call_module = False
 
 colorama.init()
@@ -12,7 +15,7 @@ def convert_bytes(num):
         if num < 1024:
             return str(num)+' '+x
         elif num >= int(1024) and str(x) == 'GEOPBYTES':
-            return str('OVER-MAX')
+            return str(Style.BRIGHT + Fore.CYAN + 'OVER-MAX' + Style.RESET_ALL)
         num //= 1024
 
 
@@ -62,6 +65,7 @@ elif len(sys.argv) == 4:
 
     print('')
     print('    [SUPER POWER BYTES]')
+    start_time = str(time.time())
 
     # n
     n_ = 1
@@ -100,6 +104,7 @@ elif len(sys.argv) == 4:
               str_ex,
               str_val,
               str_tails)
+        print('    [TIME] ' + str(float(float(time.time()) - float(start_time))))
 
     else:
         """ SUPER_POWER_RESULT  > 1024 """
@@ -114,8 +119,11 @@ elif len(sys.argv) == 4:
               str_ex,
               str_val,
               str_tails)
+        print('        [TIME] ' + str(float(float(time.time()) - float(start_time))))
 
 elif len(sys.argv) == 3:
+    start_time = str(time.time())
+
     x = 1
     y = 1
     if sys.argv[1].isdigit():
@@ -128,15 +136,20 @@ elif len(sys.argv) == 3:
     print('    [SUPER ROOT BYTES]')
     print('        [NTH ROOT] [' + str(convert_bytes(float(super_root_bytes))) + ']')
     print('        [BYTES]  (' + (str(int(super_root_bytes)) + ' Bytes)'))
+    print('        [TIME] ' + str(float(float(time.time()) - float(start_time))))
 
 elif len(sys.argv) == 2:
     """ SUPER SIZE """
+
+    start_time = str(time.time())
+
     num = 1
     if sys.argv[1].isdigit():
         num = int(str(sys.argv[1]))
     print('')
     print('    [SUPER SIZE BYTES]')
     print('        [SIZE] [' + str(convert_bytes(num)) + ']')
+    print('        [TIME] ' + str(float(float(time.time()) - float(start_time))))
 
 else:
     func_help()
