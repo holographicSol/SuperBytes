@@ -52,50 +52,29 @@
     [3 BYTE] super_bytes 3 1
     [3 BYTE] super_bytes 3 1
     [1 KB]   super_bytes 1024 1
-    [1 KB]   super_bytes 1024 1
-    [1 MB]   super_bytes 1024 2
     [1 MB]   super_bytes 1024 2
     [1 GB]   super_bytes 1024 3
-    [1 GB]   super_bytes 1024 3
-    [1 TB]   super_bytes 1024 4
     [1 TB]   super_bytes 1024 4
     [1 PB]   super_bytes 1024 5
-    [1 PB]   super_bytes 1024 5
-    [1 EB]   super_bytes 1024 6
     [1 EB]   super_bytes 1024 6
     [1 ZB]   super_bytes 1024 7
-    [1 ZB]   super_bytes 1024 7
-    [1 YB]   super_bytes 1024 8
     [1 YB]   super_bytes 1024 8
     [1 BB]   super_bytes 1024 9
-    [1 BB]   super_bytes 1024 9
-    [1 GEOBYTE] super_bytes 1024 10
     [1 GEOBYTE] super_bytes 1024 10
 
 
 [RETURN BYTES] [EXAMPLE]  [ SUPER POWER * QUANTITY ]
 
     [120 BYTE] super_bytes 1 1 120
-    [120 BYTE] super_bytes 1 1 120
-    [120 KB]   super_bytes 1024 1 120
     [120 KB]   super_bytes 1024 1 120
     [120 MB]   super_bytes 1024 2 120
-    [120 MB]   super_bytes 1024 2 120
-    [120 GB]   super_bytes 1024 3 120
     [120 GB]   super_bytes 1024 3 120
     [120 TB]   super_bytes 1024 4 120
-    [120 TB]   super_bytes 1024 4 120
-    [120 PB]   super_bytes 1024 5 120
     [120 PB]   super_bytes 1024 5 120
     [120 EB]   super_bytes 1024 6 120
-    [120 EB]   super_bytes 1024 6 120
-    [120 ZB]   super_bytes 1024 7 120
     [120 ZB]   super_bytes 1024 7 120
     [120 YB]   super_bytes 1024 8 120
-    [120 YB]   super_bytes 1024 8 120
     [120 BB]   super_bytes 1024 9 120
-    [120 BB]   super_bytes 1024 9 120
-    [120 GEOBYTE] super_bytes 1024 10 120
     [120 GEOBYTE] super_bytes 1024 10 120
 
 
@@ -113,8 +92,3 @@
 
         output: 1024 Bytes
 
-
-[SUPER_POWER] [0 bytes]
-
-	Out of programmed human bytes group range.
-	Convert anyway.
