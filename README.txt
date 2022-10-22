@@ -1,4 +1,7 @@
-[SuperPowerBytes]
+[SuperPowers]
+	
+    A bytes converter toolset to quantify bytes and scaled bytes.
+
 
     [SUPER POWER BYTES]
 
@@ -20,11 +23,6 @@
         [HELP]          -h
 
         [AUTHOR] Written by Benjamin Jack Cullen.
-
-
-[NOTES]
-	
-    A bytes converter toolset to quantify bytes and scaled bytes.
 
 
 [RETURN BYTES] [EXAMPLE] [SUPER POWER]
