@@ -31,7 +31,12 @@ def super_root(num=float, n=float):
 def super_powers(n=float, positive_exponent=float, quantity=0):
     """ loop power operation then multiply result to quantity=n """
 
-    super_power = int(int(n) ** positive_exponent) * quantity
+    i = 1
+    super_power = int(n)
+    while i < positive_exponent:
+        super_power = int(int(super_power) * int(n))
+        # print(super_power)
+        i += 1
     return int(super_power), int(super_power*quantity)
 
 
