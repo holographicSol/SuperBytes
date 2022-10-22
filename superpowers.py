@@ -1,6 +1,4 @@
 import sys
-import time
-
 import colorama
 from colorama import Style, Fore
 call_module = False
@@ -10,17 +8,11 @@ colorama.init()
 
 def convert_bytes(num):
     """ bytes for humans """
-
-    num = int(num)
-
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTES']:
-
         if num < 1024:
             return str(num)+' '+x
-
         elif num >= int(1024) and str(x) == 'GEOPBYTES':
             return str('OVER-MAX')
-
         num //= 1024
 
 
@@ -29,13 +21,12 @@ def super_root(num=float, n=float):
 
 
 def super_powers(n=float, positive_exponent=float, quantity=0):
-    """ loop power operation then multiply result to quantity=n """
+    """ loop power then multiply result by quantity """
 
     i = 1
     super_power = int(n)
     while i < positive_exponent:
         super_power = int(int(super_power) * int(n))
-        # print(super_power)
         i += 1
     return int(super_power), int(super_power*quantity)
 
@@ -72,29 +63,29 @@ elif len(sys.argv) == 4:
     print('')
     print('    [SUPER POWER BYTES]')
 
-    # check n
+    # n
     n_ = 1
     if sys.argv[1].isdigit():
         n_ = int(sys.argv[1])
 
-    # check exponent
+    # exponent
     positive_exponent = 1
     if sys.argv[2].isdigit():
         positive_exponent = int(sys.argv[2])
 
-    # check quantity
+    # quantity
     quantity = 1.0
     if len(sys.argv) == 4:
         if sys.argv[3].isdigit():
             quantity = int(sys.argv[3])
 
-    # power n by exponent and multiply by quantity
+    # super power = (( n ^ x ) * quantity)
     sp = super_powers(n=int(n_), positive_exponent=int(positive_exponent), quantity=quantity)
     str_super_power = str(sp[0])
     int_super_power = int(sp[0])
     str_human_super_power = str(convert_bytes(int(int_super_power)))
 
-    """ < 1024 """
+    """ SUPER_POWER_RESULT < 1024 """
     if sp[0] < 1024:
         str_head = '        [BYTES] ( ' + str('1') + Style.BRIGHT + Fore.CYAN + ' ^' + Style.RESET_ALL
         str_ex = str(positive_exponent)
@@ -111,7 +102,7 @@ elif len(sys.argv) == 4:
               str_tails)
 
     else:
-        """ > 1024 """
+        """ SUPER_POWER_RESULT  > 1024 """
         str_head = '        [BYTES] ( ' + str(n_) + Style.BRIGHT + Fore.CYAN + ' ^' + Style.RESET_ALL
         str_ex = str(positive_exponent)
         str_val = ') * ' + str(quantity) + ' ) = ('
@@ -124,18 +115,9 @@ elif len(sys.argv) == 4:
               str_val,
               str_tails)
 
-elif len(sys.argv) == 2:
-    num = 1
-    if sys.argv[1].isdigit():
-        num = int(str(sys.argv[1]))
-    print('')
-    print('    [SUPER SIZE BYTES]')
-    print('        [SIZE] [' + str(convert_bytes(num)) + ']')
-
 elif len(sys.argv) == 3:
     x = 1
     y = 1
-
     if sys.argv[1].isdigit():
         x = int(str(sys.argv[1]))
     if sys.argv[2].isdigit():
@@ -146,6 +128,15 @@ elif len(sys.argv) == 3:
     print('    [SUPER ROOT BYTES]')
     print('        [NTH ROOT] [' + str(convert_bytes(float(super_root_bytes))) + ']')
     print('        [BYTES]  (' + (str(int(super_root_bytes)) + ' Bytes)'))
+
+elif len(sys.argv) == 2:
+    """ SUPER SIZE """
+    num = 1
+    if sys.argv[1].isdigit():
+        num = int(str(sys.argv[1]))
+    print('')
+    print('    [SUPER SIZE BYTES]')
+    print('        [SIZE] [' + str(convert_bytes(num)) + ']')
 
 else:
     func_help()
