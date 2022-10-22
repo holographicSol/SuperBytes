@@ -65,14 +65,13 @@
 [SUPER POWER BYTES] [EXAMPLE] [ INVERSION ]
        
         Step 1. SUPER_POWER = ((Nbytes^X) * z)
-        command: superpowers 1024 11
-        command: superpowers 1024 11
+        command: superpowers 1024 10 1
 
         output: 1298074214633706907132624082305024 Bytes
 
 
         Step 2. SUPER_ROOT = Invert step 1.
-        command: super_root_bytes 11 1298074214633706907132624082305024
+        command: super_root_bytes 10 1298074214633706907132624082305024
 
         output: 1024 Bytes
 
