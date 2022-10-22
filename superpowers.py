@@ -1,4 +1,6 @@
 import sys
+import time
+
 import colorama
 from colorama import Style, Fore
 call_module = False
@@ -9,29 +11,32 @@ colorama.init()
 def convert_bytes(num):
     """ bytes for humans """
 
+    num = int(num)
+
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTES']:
 
-        if num < 1024.0:
+        if num < 1024:
             return str(num)+' '+x
 
         elif num >= int(1024) and str(x) == 'GEOPBYTES':
-            return str('MAX] ' + str(x) + ' ' + str(num))
+            return str('OVER-MAX')
 
-        num /= 1024.0
+        num //= 1024
 
 
-def super_root(num=int, n=float):
+def super_root(num=float, n=float):
     return float(n) ** (1 / float(num))
 
 
-def super_powers(n=int, positive_exponent=int, quantity=0):
+def super_powers(n=float, positive_exponent=float, quantity=0):
     """ loop power operation then multiply result to quantity=n """
     i = 1
-    super_power = float(n)
+    super_power = int(n)
     while i < positive_exponent:
-        super_power = float(float(super_power) * float(n))
+        super_power = int(int(super_power) * int(n))
+        # print(super_power)
         i += 1
-    return float(super_power), float(super_power*quantity)
+    return int(super_power), int(super_power*quantity)
 
 
 def func_help():
@@ -85,8 +90,8 @@ elif len(sys.argv) == 4:
     # power n by exponent and multiply by quantity
     sp = super_powers(n=int(n_), positive_exponent=int(positive_exponent), quantity=quantity)
     str_super_power = str(sp[0])
-    int_super_power = float(sp[0])
-    str_human_super_power = str(convert_bytes(float(int_super_power)))
+    int_super_power = int(sp[0])
+    str_human_super_power = str(convert_bytes(int(int_super_power)))
 
     """ < 1024 """
     if sp[0] < 1024:
@@ -106,7 +111,7 @@ elif len(sys.argv) == 4:
 
     else:
         """ > 1024 """
-        str_head = '        [BYTES] ( ' + str('1024') + Style.BRIGHT + Fore.CYAN + ' ^' + Style.RESET_ALL
+        str_head = '        [BYTES] ( ' + str(n_) + Style.BRIGHT + Fore.CYAN + ' ^' + Style.RESET_ALL
         str_ex = str(positive_exponent)
         str_val = ') * ' + str(quantity) + ' ) = ('
         str_tails = str(int(sp[1])) + ' Bytes )'
