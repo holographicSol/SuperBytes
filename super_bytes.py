@@ -6,14 +6,16 @@ call_module = False
 colorama.init()
 
 
-def convert_bytes(num=float):
+def convert_bytes(num):
     """ bytes for humans """
 
-    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTE']:
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTES']:
 
         if num < 1024.0:
+            return str(num)+' '+x
 
-            return str(float(num))+' '+str(x)
+        elif num >= int(1024) and str(x) == 'GEOPBYTES':
+            return str('MAX] ' + str(x) + ' ' + str(num))
 
         num /= 1024.0
 
@@ -79,9 +81,9 @@ elif len(sys.argv) >= 3:
 
     """ < 1024 """
     if sp[0] < 1024:
-        str_head = '        [BYTES] (' + str('1') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL
+        str_head = '        [BYTES] ( ' + str('1') + Style.BRIGHT + Fore.CYAN + ' ^' + Style.RESET_ALL
         str_ex = str(positive_exponent)
-        str_val = ') * ' + str(quantity) + ') = ('
+        str_val = ') * ' + str(quantity) + ' ) = ('
         ap = ' Byte )'
         if quantity > 1:
             ap = ' Bytes )'
@@ -95,9 +97,9 @@ elif len(sys.argv) >= 3:
 
     else:
         """ > 1024 """
-        str_head = '        [BYTES] (' + str('1024') + Style.BRIGHT + Fore.CYAN + '^' + Style.RESET_ALL
+        str_head = '        [BYTES] ( ' + str('1024') + Style.BRIGHT + Fore.CYAN + ' ^' + Style.RESET_ALL
         str_ex = str(positive_exponent)
-        str_val = ') * ' + str(quantity) + ') = ('
+        str_val = ') * ' + str(quantity) + ' ) = ('
         str_tails = str(int(sp[1])) + ' Bytes )'
         int_tails = int(sp[1])
         str_human = '        [' + str(convert_bytes(int_tails)) + ']'

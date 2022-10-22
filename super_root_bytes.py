@@ -7,9 +7,15 @@ def super_root(num=int, n=float):
 
 def convert_bytes(num):
     """ bytes for humans """
-    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTE']:
+
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'GEOPBYTES']:
+
         if num < 1024.0:
             return str(num)+' '+x
+
+        elif num >= int(1024) and str(x) == 'GEOPBYTES':
+            return str('MAX] [' + str(x) + ' ' + str(num))
+
         num /= 1024.0
 
 
@@ -29,7 +35,7 @@ elif len(sys.argv) == 3:
         int_super_root_bytes = super_root_bytes
         print('')
         print('    [SUPER ROOT BYTES]')
-        print('        [' + str(convert_bytes(float(super_root_bytes))) + ']')
+        print('        [NTH ROOT] [' + str(convert_bytes(float(super_root_bytes))) + ']')
         print('        [BYTES]  (' + (str(int(super_root_bytes)) + ' Bytes)'))
         print('')
     else:
