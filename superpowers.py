@@ -52,7 +52,7 @@ def func_help():
     print('        [SUPER POWER]   [EXAMPLE]          superpower 1024 4 1')
     print('        [NTH ROOT]      [EXAMPLE]          superpower 4 1099511627776')
     print('        [CONVERT]                          superpower 1024')
-    print('        [HELP]          -h')
+    print('        [HELP]                             -h')
     print('')
     print('        [AUTHOR] Written by Benjamin Jack Cullen.')
 
@@ -140,7 +140,6 @@ elif len(sys.argv) == 3:
     print('    [SUPER ROOT BYTES]')
     print('        [NTH ROOT] [' + str(convert_bytes(float(super_root_bytes))) + ']')
     print('        [BYTES]  (' + (str(int(super_root_bytes)) + ' Bytes)'))
-    print('')
 
 else:
     func_help()
