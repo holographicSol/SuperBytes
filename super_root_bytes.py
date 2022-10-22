@@ -24,7 +24,8 @@ if '-h' in sys.argv:
     print('    [SUPER ROOT BYTES]\n')
     print('        [N ROOT]     super_root_bytes nth_root n')
     print('        [HELP]       -h')
-    print('        [AUTHOR]     Written by Benjamin Jack Cullen.')
+    print('')
+    print('        [AUTHOR] Written by Benjamin Jack Cullen.')
     print('')
 
 elif len(sys.argv) == 3:

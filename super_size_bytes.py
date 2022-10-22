@@ -20,6 +20,7 @@ if '-h' in sys.argv:
     print('    [SUPER SIZE BYTES]\n')
     print('        [CONVERT BYTES] super_size 1024')
     print('        [HELP]          -h')
+    print('')
     print('        [AUTHOR] Written by Benjamin Jack Cullen.')
     print('')
 
