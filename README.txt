@@ -64,7 +64,7 @@
 
 [SUPER POWER BYTES] [EXAMPLE] [ INVERSION ]
        
-        Step 1. SUPER_POWER = ((Nbytes^X) * z)
+        Step 1. SUPER_POWER = (Nbytes^X) * z)
         
         command: superpowers 1024 10 1
 
