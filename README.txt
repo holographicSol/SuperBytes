@@ -15,7 +15,7 @@
         [ZETTABYTE]     [ZB]               superpowers 1024 7 1
         [YOTTABYTE]     [YB]               superpowers 1024 8 1
         [BRONTOBYTE]    [BB]               superpowers 1024 9 1
-        [GEOPBYTE]      [GBP]              superpowers 1024 10 1
+        [GEOPBYTE]      [GPB]              superpowers 1024 10 1
 
         [SUPER POWER]   [EXAMPLE]          superpowers 1024 4 1
         [NTH ROOT]      [EXAMPLE]          superpowers 4 1099511627776
