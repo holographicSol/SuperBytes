@@ -47,7 +47,7 @@ def func_help():
     print('        [ZETTABYTE]     [ZB]               superpower 1024 7 1')
     print('        [YOTTABYTE]     [YB]               superpower 1024 8 1')
     print('        [BRONTOBYTE]    [BB]               superpower 1024 9 1')
-    print('        [GEOPBYTE]      [GBP]              superpower 1024 10 1')
+    print('        [GEOPBYTE]      [GPB]              superpower 1024 10 1')
     print('')
     print('        [SUPER POWER]   [EXAMPLE]          superpower 1024 4 1')
     print('        [NTH ROOT]      [EXAMPLE]          superpower 4 1099511627776')
